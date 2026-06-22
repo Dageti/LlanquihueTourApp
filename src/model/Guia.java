@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Modelado de clase Guia que hereda de empleado, identifica si un guía se maneja en más de un idioma.
+ */
 public class Guia extends Empleado {
 	private String idioma;
 

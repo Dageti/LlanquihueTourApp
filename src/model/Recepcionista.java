@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Modelado de clase Recepcionista que hereda de empleado, identifica si un recepcionista se maneja en más de un idioma y si sabe primeros auxilios.
+ */
 public class Recepcionista extends Empleado {
 	private String idiomas;
 	private Boolean primerosAuxilios;

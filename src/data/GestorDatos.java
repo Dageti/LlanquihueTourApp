@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import util.RutInvalidoException;
 
 /**
- * Bucle para leer el archivo "tours.txt" para poblar la lista, en caso de tener formato válido se agrega a la lista, si no, arroja error
- * Al final del bucle devuelve la lista poblada
+ * GestorDatos se encarga de leer datos desde un archivo externo en formato .txt y transformarlas en objetos tipo Tour o Empleado
  */
 public class GestorDatos {
 	public ArrayList<Tour> cargarTours(String rutaArchivo) {

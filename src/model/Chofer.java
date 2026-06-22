@@ -1,5 +1,7 @@
 package model;
-
+/**
+ * Modelado de clase Chofer que hereda de empleado, identifica el tipo de licencia y duración de esta.
+ */
 public class Chofer extends Empleado {
 	private String licencia;
 	private int duracionLicencia;

@@ -1,5 +1,7 @@
 package model;
-
+/**
+ * Modelado de clase Cocina que hereda de empleado, identifica si una persona que trabaja en cocina es chef o ayundante de cocina mediante un booleano.
+ */
 public class Cocina extends Empleado {
 	private boolean esChef;
 

@@ -6,7 +6,7 @@
 > almacenándolos
 > en ArrayList.
 >
->Incluye filtros de búsquedas e interfaz interactiva simple.
+>Incluye filtros de búsquedas e interfaz interactiva simple en consola.
 
 ## Estructura
 
