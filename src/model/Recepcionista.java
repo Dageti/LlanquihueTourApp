@@ -1,0 +1,35 @@
+package model;
+
+public class Recepcionista extends Empleado {
+	private String idiomas;
+	private Boolean primerosAuxilios;
+
+	public Recepcionista(String nombre, int telefono, Direccion direccion, Rut rut, String puesto, String turno, String idiomas, boolean primerosAuxilios) {
+		super(nombre, telefono, direccion, rut, puesto, turno);
+		this.idiomas = idiomas;
+		this.primerosAuxilios = primerosAuxilios;
+
+	}
+
+	public String getIdiomas() {
+		return idiomas;
+	}
+
+	public void setIdiomas(String idiomas) {
+		this.idiomas = idiomas;
+	}
+
+	public Boolean getPrimerosAuxilios() {
+		return primerosAuxilios;
+	}
+
+	public void setPrimerosAuxilios(Boolean primerosAuxilios) {
+		this.primerosAuxilios = primerosAuxilios;
+	}
+
+	@Override
+	public String toString() {
+		String auxilio = primerosAuxilios ? "Sí" : "No";
+		return super.toString() + " | Idiomas='" + idiomas + "', tiene conocimientos sobre primeros auxilios='" + auxilio + "'";
+	}
+}

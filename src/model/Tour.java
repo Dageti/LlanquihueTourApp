@@ -27,12 +27,13 @@ public class Tour {
 	/**
 	 * Métodos Getters y Setters
 	 */
+
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
-		nombre = nombre;
+		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {
@@ -40,7 +41,7 @@ public class Tour {
 	}
 
 	public void setDescripcion(String descripcion) {
-		descripcion = descripcion;
+		this.descripcion = descripcion;
 	}
 
 	public double getPrecio() {

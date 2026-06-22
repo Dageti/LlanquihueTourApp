@@ -11,7 +11,7 @@
 
 - `model`: Contiene la clase `Tour` que representa los datos.
 - `data`: Contiene el `GestorDatos` que lee el archivo txt y crea los objetos.
-- `ui`: Contiene la clase `Main` que ejecuta el programa y filtra.
+- `app`: Contiene la clase `Main` que ejecuta el programa y filtra.
 - `resources`: Almacena el archivo `tours.txt` con los datos de los Tours.
 
 ## Instrucciones de ejecución

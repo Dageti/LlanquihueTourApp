@@ -1,0 +1,5 @@
+Tour Premium; Incluye 4 noches y 5 días a las Torres del Paine; 400000;1
+Tour Imperdible; Incluye 2 noches y 3 días a un Volcán (su elección); 5060400;2
+Tour Deluxe; Incluye 4 noches y 5 días en frutillar; 230050;3
+Tour por el Día; Caminata por senderos turísticos de la zona;49990;1
+Tour Gratis; Paseo por el patio de las instalaciones;0;1
