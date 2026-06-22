@@ -33,7 +33,7 @@ src/
 └── RutInvalidoException.java
 ```
 
-
+## Modelos
 | Clase           | Descripción                                                                          |
 |-----------------|--------------------------------------------------------------------------------------|
 | `Persona`       | Clase base con atributos comunes: nombre, teléfono, dirección y RUT.                 |
