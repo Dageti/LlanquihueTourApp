@@ -10,6 +10,30 @@
 
 ## Estructura
 
+```
+src/
+├── app/
+│   └── Main.java
+├── data/
+│   └── GestorDatos.java
+├── model/
+│   ├── Chofer.java
+│   ├── Cocina.java
+│   ├── Direccion.java
+│   ├── Empleado.java
+│   ├── Guia.java
+│   ├── Persona.java
+│   ├── Recepcionista.java
+│   ├── Rut.java
+│   └── Tour.java
+├── resources/
+│   ├── tours.txt
+│   └── trabajadores.txt
+└── util/
+└── RutInvalidoException.java
+```
+
+
 | Clase           | Descripción                                                                          |
 |-----------------|--------------------------------------------------------------------------------------|
 | `Persona`       | Clase base con atributos comunes: nombre, teléfono, dirección y RUT.                 |
