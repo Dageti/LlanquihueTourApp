@@ -1,4 +1,5 @@
 GUIA;Juan Perez;987654321;1234508-K;742;Avenida Siempre Viva;Springfield;Guia Turístico;Dia;Ingles
 CHOFER;Philip J. Fry;123456789;84950234-0;32;Calle 57 Nueva Nueva York;Manhattan;Chofer de Tour;Dia;Clase A2;5
-COCINA;P. Sherman;958648697;23556233-3;142;Calle Wallaby;Sydney;Chef Principal;Noche;true
+COCINA;P. Sherman;958648697;23556233-3;142;Calle Wallaby;Sydney;Chef;Noche;true
+COCINA;P. Sherman Jr;958648644;12344567-k;142;Calle Wallaby;Sydney;Ayudante de cocina;Noche;true
 RECEPCIONISTA;Cosme Fulanito;999888777;18345678-K;112;Paseo del Rio;Frutillar;Recepcionista;Dia;Aleman, Ingles;true

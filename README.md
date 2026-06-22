@@ -2,17 +2,25 @@
 <p>
 </p>
 
-> Aplicación para gestionar los paquetes turísticos de LLanquihue Tour leyendo un archivo externo(.txt) y almacenándolos
+> Aplicación para gestionar los paquetes turísticos y empleados de LLanquihue Tour leyendo un archivo externo(.txt) y
+> almacenándolos
 > en ArrayList.
 >
->Incluye un filtro de búsqueda a modo de testeo.
+>Incluye un filtros de búsquedas
 
 ## Estructura
 
-- `model`: Contiene la clase `Tour` que representa los datos.
-- `data`: Contiene el `GestorDatos` que lee el archivo txt y crea los objetos.
-- `app`: Contiene la clase `Main` que ejecuta el programa y filtra.
-- `resources`: Almacena el archivo `tours.txt` con los datos de los Tours.
+| Clase           | Descripción                                                                     |
+|-----------------|---------------------------------------------------------------------------------|
+| `Persona`       | Clase base con atributos comunes: nombre, teléfono, dirección y RUT.            |
+| `Direccion`     | Representa la dirección de una persona (composición dentro de `Persona`).       |
+| `Rut`           | Encapsula y valida el RUT de una persona (composición dentro de `Persona`).     |
+| `Empleado`      | Hereda de `Persona` Agrega puesto y turno de trabajo.                           |
+| `Guia`          | Hereda de `Empleado` Agrega el idioma que maneja el guía turístico.             |
+| `Chofer`        | Hereda de `Empleado` Agrega tipo de licencia y años de experiencia.             |
+| `Cocina`        | Hereda de `Empleado` Indica si la persona es chef o ayudante de cocina.         |
+| `Recepcionista` | Hereda de `Empleado` Agrega idiomas y conocimientos en primeros auxilios.       |
+| `Tour`          | Representa un paquete turístico: nombre, descripción, precio y cantidad de personas. |
 
 ## Instrucciones de ejecución
 
