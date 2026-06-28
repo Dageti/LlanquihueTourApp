@@ -59,7 +59,7 @@ src/
 ## Jerarquía de Servicios Turisticos (semana 6)
 
 Se incorporaron 3 subclases que heredan mediante super los atributos de la superclase `ServicioTuristico`. </br>
-Además se incorporó opcion 5 en el menu interactivo para mostrar el contenido de esta semana.
+Además se incorporó una opción extra en el menu interactivo para mostrar el contenido de esta semana.
 
 ```
 ServicioTuristico (superclase)
