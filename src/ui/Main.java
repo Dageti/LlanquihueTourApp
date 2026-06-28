@@ -1,7 +1,9 @@
-package app;
+package ui;
 
 import data.GestorDatos;
+import data.GestorServicios;
 import model.Empleado;
+import model.ServicioTuristico;
 import model.Tour;
 
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ public class Main {
 		GestorDatos gestor = new GestorDatos();
 		ArrayList<Tour> tours = gestor.cargarTours(rutaArchivoTour);
 		ArrayList<Empleado> trabajadores = gestor.cargarTrabajadores(rutaArchivoTrabajador);
+		GestorServicios gestorServicios = new GestorServicios();
+		ArrayList<ServicioTuristico> ServiciosTuristicos = gestorServicios.crearServicioTuristico();
 
 		Scanner scanner = new Scanner(System.in);
 		int opcion = 0;
@@ -22,7 +26,8 @@ public class Main {
 			System.out.println("1. mostrar Tours");
 			System.out.println("2. mostrar Trabajadores");
 			System.out.println("3. mostrar Tours en oferta");
-			System.out.println("4. cerrar programa");
+			System.out.println("4. mostrar servicios Turísticos (TAREA SEMANA 6!)");
+			System.out.println("5. cerrar programa");
 			try {
 				opcion = Integer.parseInt(scanner.nextLine());
 				switch (opcion) {
@@ -36,6 +41,9 @@ public class Main {
 						mostrarToursEnOferta(tours, 100000);
 						break;
 					case 4:
+						mostrarServicioTuristico(ServiciosTuristicos);
+						break;
+					case 5:
 						System.out.println("¡Hasta pronto!");
 						break;
 					default:
@@ -44,8 +52,19 @@ public class Main {
 			} catch (NumberFormatException e) {
 				System.out.println("Por favor ingrese un número válido");
 			}
-		} while (opcion != 4);
+		} while (opcion != 5);
 		scanner.close();
+	}
+
+	private static void mostrarServicioTuristico(ArrayList<ServicioTuristico> ServiciosTuristico) {
+		System.out.println("========Servicios Turísticos========");
+		if (ServiciosTuristico.isEmpty()) {
+			System.out.println("No hay servicios para mostrar");
+		} else {
+			for (ServicioTuristico servicioTuristico : ServiciosTuristico) {
+				System.out.println(servicioTuristico);
+			}
+		}
 	}
 
 	private static void mostrarTrabajadores(ArrayList<Empleado> trabajadores) {
@@ -83,4 +102,6 @@ public class Main {
 			System.out.println("No hay tours disponibles por menos de " + precioTope + " pesos.");
 		}
 	}
+
+
 }
