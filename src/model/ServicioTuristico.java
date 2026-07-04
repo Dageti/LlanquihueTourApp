@@ -25,11 +25,8 @@ public class ServicioTuristico {
 		this.duracionHoras = duracionHoras;
 	}
 
-	@Override
-	public String toString() {
-		return "ServicioTurisitico{" +
-				"nombre='" + nombre + '\'' +
-				", duracionHoras=" + duracionHoras +
-				'}';
+	public void mostrarInformacion() {
+		System.out.print("Nombre del servicio: " + nombre + "," + " Duración estimada: " + duracionHoras + " horas,");
 	}
+
 }

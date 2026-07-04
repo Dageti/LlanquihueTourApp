@@ -62,7 +62,7 @@ public class Main {
 			System.out.println("No hay servicios para mostrar");
 		} else {
 			for (ServicioTuristico servicioTuristico : ServiciosTuristico) {
-				System.out.println(servicioTuristico);
+				servicioTuristico.mostrarInformacion();
 			}
 		}
 	}

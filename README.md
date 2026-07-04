@@ -68,6 +68,11 @@ ServicioTuristico (superclase)
 └── ExcursionCultural
 ```
 
+## Semana 7
+
+> Se agregaron los cambios solicitados para la semana 7 donde se aplica polimorfismo a las clases entre superclase y
+> clases hijas.
+
 ## Instrucciones de ejecución
 
 > - Clonar repositorio.
