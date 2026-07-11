@@ -1,6 +1,6 @@
 package model;
 
-public class ServicioTuristico {
+public class ServicioTuristico implements Registrable {
 	protected String nombre;
 	protected double duracionHoras;
 
@@ -25,8 +25,8 @@ public class ServicioTuristico {
 		this.duracionHoras = duracionHoras;
 	}
 
-	public void mostrarInformacion() {
+	@Override
+	public void mostrarResumen() {
 		System.out.print("Nombre del servicio: " + nombre + "," + " Duración estimada: " + duracionHoras + " horas,");
 	}
-
 }

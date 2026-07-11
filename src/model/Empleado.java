@@ -3,7 +3,7 @@ package model;
 /**
  * La clase Empleado hereda de Persona y permite saber el puesto y el turno del empleado.
  */
-public class Empleado extends Persona {
+public class Empleado extends Persona implements Registrable {
 	private String puesto;
 	private String turno;
 
@@ -44,10 +44,7 @@ public class Empleado extends Persona {
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() +
-				" Puesto='" + puesto + '\'' +
-				", Turno='" + turno + '\''
-				;
+	public void mostrarResumen() {
+		System.out.print("Nombre: " + this.getNombre() + ", Puesto: " + this.getPuesto() + ", Turno: " + this.getTurno());
 	}
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class ExcursionCultural extends ServicioTuristico {
+public class ExcursionCultural extends ServicioTuristico implements Registrable {
 	protected String lugarHistorico;
 
 	public ExcursionCultural(String nombre, double duracionHoras, String lugarHistorico) {
@@ -9,8 +9,8 @@ public class ExcursionCultural extends ServicioTuristico {
 	}
 
 	@Override
-	public void mostrarInformacion() {
-		super.mostrarInformacion();
+	public void mostrarResumen() {
+		super.mostrarResumen();
 		System.out.println(" Lugar histórico: " + lugarHistorico);
 	}
 }
