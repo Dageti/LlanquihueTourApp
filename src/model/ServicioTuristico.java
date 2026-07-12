@@ -26,7 +26,7 @@ public class ServicioTuristico implements Registrable {
 	}
 
 	@Override
-	public void mostrarResumen() {
-		System.out.print("Nombre del servicio: " + nombre + "," + " Duración estimada: " + duracionHoras + " horas,");
+	public String mostrarResumen() {
+		return "Servicio: " + nombre + " | Duración: " + duracionHoras + " hrs.";
 	}
 }

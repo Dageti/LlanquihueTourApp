@@ -36,8 +36,8 @@ public class Vehiculo implements Registrable {
 	}
 
 	@Override
-	public void mostrarResumen() {
-		System.out.print("Marca: " + marca + ",Patente: " + patente + ",Capacidad: " + capacidad);
+	public String mostrarResumen() {
+		return "Marca: " + marca + ",Patente: " + patente + ",Capacidad: " + capacidad;
 	}
 }
 

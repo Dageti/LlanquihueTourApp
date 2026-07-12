@@ -44,7 +44,7 @@ public class Empleado extends Persona implements Registrable {
 	}
 
 	@Override
-	public void mostrarResumen() {
-		System.out.print("Nombre: " + this.getNombre() + ", Puesto: " + this.getPuesto() + ", Turno: " + this.getTurno());
+	public String mostrarResumen() {
+		return "Nombre: " + getNombre() + ", Puesto: " + getPuesto() + ", Turno: " + getTurno();
 	}
 }

@@ -9,8 +9,8 @@ public class PaseoLacustre extends ServicioTuristico {
 	}
 
 	@Override
-	public void mostrarResumen() {
+	public String mostrarResumen() {
 		super.mostrarResumen();
-		System.out.println(" Tipo de embarcación: " + tipoDeEmbarcacion);
+		return " Tipo de embarcación: " + tipoDeEmbarcacion;
 	}
 }

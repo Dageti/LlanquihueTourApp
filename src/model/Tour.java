@@ -3,7 +3,7 @@ package model;
 /**
  * Clase Tour representa los paquetes turísticos disponibles a manos de Llanquihue Tour
  */
-public class Tour {
+public class Tour implements Registrable {
 
 	private String nombre;
 	private String descripcion;
@@ -61,11 +61,7 @@ public class Tour {
 	}
 
 	@Override
-	public String toString() {
-		return
-				"Nombre= '" + nombre + '\'' +
-						", Descripción= '" + descripcion + '\'' +
-						", precio=" + precio + " pesos" +
-						", Personas consideradas en el paquete= " + cantidadPersonas;
+	public String mostrarResumen() {
+		return "Tour: " + getNombre() + " | Precio: $" + getPrecio();
 	}
 }

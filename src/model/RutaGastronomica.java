@@ -9,9 +9,9 @@ public class RutaGastronomica extends ServicioTuristico implements Registrable {
 	}
 
 	@Override
-	public void mostrarResumen() {
+	public String mostrarResumen() {
 		super.mostrarResumen();
-		System.out.println(" Paradas: " + this.numeroDeParadas);
+		return " Paradas: " + this.numeroDeParadas;
 	}
 
 }

@@ -9,8 +9,8 @@ public class ExcursionCultural extends ServicioTuristico implements Registrable 
 	}
 
 	@Override
-	public void mostrarResumen() {
+	public String mostrarResumen() {
 		super.mostrarResumen();
-		System.out.println(" Lugar histórico: " + lugarHistorico);
+		return " Lugar histórico: " + lugarHistorico;
 	}
 }
