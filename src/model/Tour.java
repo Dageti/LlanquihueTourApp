@@ -62,6 +62,6 @@ public class Tour implements Registrable {
 
 	@Override
 	public String mostrarResumen() {
-		return "Tour: " + getNombre() + " | Precio: $" + getPrecio();
+		return "Tour: " + getNombre() + ", Precio: $" + getPrecio();
 	}
 }

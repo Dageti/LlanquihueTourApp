@@ -1,4 +1,5 @@
 package model;
+
 /**
  * Modelado de clase Chofer que hereda de empleado, identifica el tipo de licencia y duración de esta.
  */
@@ -29,7 +30,7 @@ public class Chofer extends Empleado {
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() + " | Licencia='" + licencia + "', Duración Licencia=" + duracionLicencia + " años";
+	public String mostrarResumen() {
+		return super.mostrarResumen() + ", Licencia='" + licencia + "', Duración Licencia=" + duracionLicencia + " años";
 	}
 }

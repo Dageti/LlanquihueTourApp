@@ -20,7 +20,7 @@ public class Guia extends Empleado {
 	}
 
 	@Override
-	public String toString() {
-		return super.toString() + " | Idioma='" + idioma + "'";
+	public String mostrarResumen() {
+		return super.mostrarResumen() + ", Idioma='" + idioma + "'";
 	}
 }

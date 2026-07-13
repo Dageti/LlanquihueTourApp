@@ -1,6 +1,6 @@
 package model;
 
-public class RutaGastronomica extends ServicioTuristico implements Registrable {
+public class RutaGastronomica extends ServicioTuristico {
 	protected int numeroDeParadas;
 
 	public RutaGastronomica(String nombre, double duracionHoras, int numeroDeParadas) {
@@ -10,8 +10,7 @@ public class RutaGastronomica extends ServicioTuristico implements Registrable {
 
 	@Override
 	public String mostrarResumen() {
-		super.mostrarResumen();
-		return " Paradas: " + this.numeroDeParadas;
+		return super.mostrarResumen() + ", Paradas: " + this.numeroDeParadas;
 	}
 
 }

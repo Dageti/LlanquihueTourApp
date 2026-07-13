@@ -72,6 +72,16 @@ ServicioTuristico (superclase)
 
 > Se agregaron los cambios solicitados para la semana 7 donde se aplica polimorfismo a las clases entre superclase y
 > clases hijas.
+>
+
+## Semana 8
+
+> - Agregada Interfaz: Contrato de comportamiento entre clases de diferentes herencias y jerarquías.
+> - Aplicado polimorfismo que permite la recolección de datos en una lista de objetos generica, sin discrepar por sus
+    clases específicas.
+> - Agregada UI simple.
+> - Eliminado código legacy.
+> - aplicada retrocompatibilidad para poder leer los archivos txt generados en semanas anteriores.
 
 ## Instrucciones de ejecución
 

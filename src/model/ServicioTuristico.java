@@ -27,6 +27,6 @@ public class ServicioTuristico implements Registrable {
 
 	@Override
 	public String mostrarResumen() {
-		return "Servicio: " + nombre + " | Duración: " + duracionHoras + " hrs.";
+		return "Servicio: " + nombre + ", Duración: " + duracionHoras + " hrs.";
 	}
 }

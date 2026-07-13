@@ -8,6 +8,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase que administra una colección polimórfica de entidades.
+ * Lee los archivos .txt y los agrega como una base de información al sistema.
+ */
+
 public class GestorEntidades {
 	public ArrayList<Registrable> entidades = new ArrayList<>();
 
@@ -81,6 +86,12 @@ public class GestorEntidades {
 			System.err.println("Error al leer trabajadores: " + e.getMessage());
 		}
 	}
+
+	/**
+	 * Recorre mediante instanceof la colección de entidades genéricas y las identifica mediante una etiqueta, aplica polimorfismo para agregar el formato correspondiente.
+	 *
+	 * @return String con todas las entidades para pasarlo al UI.
+	 */
 
 	public String resumenEntidades() {
 		StringBuilder resumen = new StringBuilder();

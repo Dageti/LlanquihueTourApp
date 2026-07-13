@@ -1,74 +1,112 @@
 package ui;
 
-import javax.swing.JOptionPane;
-
 import data.GestorEntidades;
-import model.Vehiculo;
 import model.ServicioTuristico;
+import model.Vehiculo;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Clase encargada del UI, delega la lógica a GestorEntidades.
+ */
 
 public class VentanaGrafica {
+
 	private GestorEntidades gestor = new GestorEntidades();
+	private JFrame ventana;
+	private JTextArea areaTexto;
 
 	public void iniciar() {
 		gestor.cargarDatosIniciales();
-		String opcion;
-		do {
-			opcion = JOptionPane.showInputDialog(null,
-					"====Llanquihue Tour====\n" +
-							"1.- Ingresar un Vehículo\n" +
-							"2.- Ingresar un Servicio Turístico\n" +
-							"3.- Mostrar registro completo\n" +
-							"4.- Salir\n",
-					JOptionPane.PLAIN_MESSAGE);
 
-			if (opcion != null) {
-				switch (opcion) {
-					case "1":
-						ingresarVehiculo();
-						break;
-					case "2":
-						ingresarServicioTuristico();
-						break;
-					case "3":
-						JOptionPane.showMessageDialog(null, gestor.resumenEntidades(), "Registro General", JOptionPane.INFORMATION_MESSAGE);
-						break;
-					case "4":
-						JOptionPane.showMessageDialog(null, "¡Bye!");
-						System.exit(0);
-						break;
-					default:
-						JOptionPane.showMessageDialog(null, "¡Ingrese una opción válida!", "Error", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-		} while (opcion != null);
+		ventana = new JFrame("Llanquihue Tour - Panel de Administración");
+		ventana.setSize(650, 450);
+		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ventana.setLocationRelativeTo(null);
+		ventana.setLayout(new BorderLayout(10, 10));
+
+
+		JPanel panelBotones = new JPanel();
+
+		JButton btnVehiculo = new JButton("Agregar Vehículo");
+		JButton btnServicio = new JButton("Agregar Servicio");
+		JButton btnMostrar = new JButton("Mostrar Registro Completo");
+		JButton btnSalir = new JButton("Salir");
+
+		panelBotones.add(btnVehiculo);
+		panelBotones.add(btnServicio);
+		panelBotones.add(btnMostrar);
+		panelBotones.add(btnSalir);
+
+		areaTexto = new JTextArea();
+		areaTexto.setEditable(false);
+		areaTexto.setFont(new Font("Arial", Font.PLAIN, 13));
+		JScrollPane scrollPane = new JScrollPane(areaTexto);
+
+		scrollPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+		btnVehiculo.addActionListener(e -> agregarVehiculo());
+		btnServicio.addActionListener(e -> agregarServicio());
+		btnMostrar.addActionListener(e -> areaTexto.setText(gestor.resumenEntidades()));
+		btnSalir.addActionListener(e -> System.exit(0));
+
+
+		ventana.add(panelBotones, BorderLayout.NORTH);
+		ventana.add(scrollPane, BorderLayout.CENTER);
+
+		areaTexto.setText("==================== Sistema de gestión Llanquihue Tour! ===================\n\n" +
+				"Selecciona una opción en el menú superior para comenzar.");
+
+		ventana.setVisible(true);
 	}
 
-	private void ingresarVehiculo() {
+	private void agregarVehiculo() {
 		try {
-			String marca = JOptionPane.showInputDialog(null, "Marca: ");
-			String patente = JOptionPane.showInputDialog(null, "Patente: ");
-			String capacidadStr = JOptionPane.showInputDialog(null, "Ingrese cuántos Kg de capacidad tiene el vehículo: ");
+			String marca = JOptionPane.showInputDialog(ventana, "Ingrese la marca del vehículo:");
+			if (marca == null) return;
+
+			String patente = JOptionPane.showInputDialog(ventana, "Ingrese la patente:");
+			if (patente == null) return;
+
+			String capacidadStr = JOptionPane.showInputDialog(ventana, "Ingrese la capacidad del vehiculo en Kg: ");
+			if (capacidadStr == null) return;
+
 			double capacidad = Double.parseDouble(capacidadStr);
-			Vehiculo newVehiculo = new Vehiculo(marca, patente, capacidad);
-			gestor.agregarEntidad(newVehiculo);
-			JOptionPane.showMessageDialog(null, "¡Vehículo agregado correctamente!", "", JOptionPane.INFORMATION_MESSAGE);
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error al ingresar el vehículo", JOptionPane.ERROR_MESSAGE);
+
+			gestor.agregarEntidad(new Vehiculo(marca, patente, capacidad));
+
+			JOptionPane.showMessageDialog(ventana, "¡Vehículo agregado correctamente!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+			areaTexto.setText(gestor.resumenEntidades());
+
+		} catch (NumberFormatException ex) {
+			JOptionPane.showMessageDialog(ventana, "Error: La capacidad debe ser un número válido.", "Error de formato", JOptionPane.ERROR_MESSAGE);
+		} catch (Exception ex) {
+			JOptionPane.showMessageDialog(ventana, "Error inesperado al ingresar los datos.", "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
-	private void ingresarServicioTuristico() {
+	private void agregarServicio() {
 		try {
-			String nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del servicio: ");
-			String duracionStr = JOptionPane.showInputDialog(null, "Ingrese la duración del servicio (horas): ");
+			String nombre = JOptionPane.showInputDialog(ventana, "Ingrese el nombre del Servicio Turístico:");
+			if (nombre == null) return;
+
+			String duracionStr = JOptionPane.showInputDialog(ventana, "Ingrese la duración (en horas):");
+			if (duracionStr == null) return;
+
 			double duracion = Double.parseDouble(duracionStr);
 
-			ServicioTuristico newServicioTuristico = new ServicioTuristico(nombre, duracion);
-			gestor.agregarEntidad(newServicioTuristico);
-			JOptionPane.showMessageDialog(null, "¡Servicio agregado correctamente!", "", JOptionPane.INFORMATION_MESSAGE);
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error al ingresar el servicio", JOptionPane.ERROR_MESSAGE);
+			gestor.agregarEntidad(new ServicioTuristico(nombre, duracion));
+
+			JOptionPane.showMessageDialog(ventana, "¡Servicio agregado correctamente!", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+			areaTexto.setText(gestor.resumenEntidades());
+
+		} catch (NumberFormatException ex) {
+			JOptionPane.showMessageDialog(ventana, "Error: La duración debe ser un número válido.", "Error de formato", JOptionPane.ERROR_MESSAGE);
+		} catch (Exception ex) {
+			JOptionPane.showMessageDialog(ventana, "Error inesperado al ingresar los datos.", "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }
-

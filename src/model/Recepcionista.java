@@ -31,8 +31,8 @@ public class Recepcionista extends Empleado {
 	}
 
 	@Override
-	public String toString() {
+	public String mostrarResumen() {
 		String auxilio = primerosAuxilios ? "Sí" : "No";
-		return super.toString() + " | Idiomas='" + idiomas + "', tiene conocimientos sobre primeros auxilios='" + auxilio + "'";
+		return super.mostrarResumen() + ", Idiomas='" + idiomas + "', tiene conocimientos sobre primeros auxilios='" + auxilio + "'";
 	}
 }

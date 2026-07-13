@@ -1,6 +1,7 @@
 package model;
+
 /**
- * Modelado de clase Cocina que hereda de empleado, identifica si una persona que trabaja en cocina es chef o ayundante de cocina mediante un booleano.
+ * Modelado de clase Cocina que hereda de empleado, identifica si una persona que trabaja en cocina es chef o ayudante de cocina mediante un booleano.
  */
 public class Cocina extends Empleado {
 	private boolean esChef;
@@ -19,8 +20,8 @@ public class Cocina extends Empleado {
 	}
 
 	@Override
-	public String toString() {
+	public String mostrarResumen() {
 		String rol = esChef ? "Chef" : "Ayudante de cocina";
-		return super.toString() + " | Rol Cocina='" + rol + "'";
+		return super.mostrarResumen() + ", Rol Cocina='" + rol + "'";
 	}
 }
